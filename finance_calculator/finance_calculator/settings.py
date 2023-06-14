@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'retirement_calculator.apps.RetirementCalculatorConfig',
 ]
 
 MIDDLEWARE = [
