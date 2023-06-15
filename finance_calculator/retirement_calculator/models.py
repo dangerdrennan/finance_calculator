@@ -13,7 +13,7 @@ class Profile(models.Model):
         return self.retirement_age - self.current_age
     
     def calculate_return(self, years):
-        return self.balance * ((1 + self.rate_of_return) ** years) - self.balance
+        return self.current_savings * ((1 + self.rate_of_return) ** years) - self.current_savings
 
     class Meta:
         verbose_name = 'Profile'
