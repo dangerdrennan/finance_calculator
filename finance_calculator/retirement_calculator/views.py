@@ -12,7 +12,7 @@ def retirement_calulator(request):
         
             years_to_retirement = profile.calculate_years_to_retirement()
             end_balance = profile.calculate_return(years_to_retirement)
-            return render(request, 'calculator_result.html', {'retirement_savings': end_balance})
+            return render(request, 'retirement_calculator/calculator_result.html', {'retirement_savings': end_balance})
     else:
         form = ProfileForm()
     return render(request, 'retirement_calculator/calculator.html', {'form':form})
