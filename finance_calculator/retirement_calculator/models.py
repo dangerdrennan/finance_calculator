@@ -10,6 +10,7 @@ class Profile(models.Model):
     percent_contribution = models.FloatField(default=20)
     rate_of_return = models.FloatField(default=4)
     projected_yearly_salary_increase = models.FloatField(default=3.25)
+    max_salary = models.IntegerField(default=143000)
 
     def calculate_years_to_retirement(self):
         return self.retirement_age - self.current_age
@@ -26,12 +27,14 @@ class Profile(models.Model):
 
         for year in range(years):
             # Add this year's contribution
+            
             total += salary * percent_contribution
 
             # Grow the total amount and salary by their respective rates
             total *= (1 + rate_of_return)
             salary *= (1 + yearly_salary_increase)
-
+            # Never outpace max salary
+            salary = min(salary, self.max_salary)
         return total
 
 
