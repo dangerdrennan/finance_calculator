@@ -1,7 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-  <h2>Retirement Savings Estimate</h2>
-  <p>Your estimated retirement savings: {{ retirement_savings }}</p>
-  <a href="{% url 'retirement_calculator:calculator' %}">Calculate again</a>
-{% endblock %}

@@ -20,7 +20,7 @@
               </div>
               {% endfor %}
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-end">
               <button type="submit" class="btn btn-primary">Calculate</button>
             </div>
           </form>
@@ -29,4 +29,7 @@
     </div>
   </div>
 </div>
+{% if retirement_savings %}
+<h3 class="text-center mb-3">Projected Retirement Savings: ${{ retirement_savings|floatformat:2 }}</h3>
+{% endif %}
 {% endblock %}
